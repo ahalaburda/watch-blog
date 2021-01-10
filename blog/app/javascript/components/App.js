@@ -8,6 +8,7 @@ import {
 import Posts from './Posts/Posts'
 import Post from './Post/Post'
 import Remote from '../services/Remote'
+import Local from '../services/Local'
 
 const App = () => {
   return(
@@ -19,7 +20,7 @@ const App = () => {
 				<span style={{position: 'absolute', top: '2%'}}>Just a Simple Watch Blog.</span>
 				<ul>
 					<li className="colorlib-active"><Link to="/">Home</Link></li>
-					<li><Link to="/">Local</Link></li>
+					<li><Link to="/local">Local</Link></li>
 					<li><Link to="/remote">Remote</Link></li>
 					<li><Link to="/">About</Link></li>
 					<li><Link to="/">Login</Link></li>
@@ -38,6 +39,9 @@ const App = () => {
 						<div className="col-xl-12 py-5 px-md-5">
 							<div className="row pt-md-4">
 								<Switch>
+									<Route path="/local">
+										<Local />
+									</Route>
 									<Route path="/remote">
 										<Remote />
 									</Route>
