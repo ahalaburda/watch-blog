@@ -1,16 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-import Posts from './Posts/Posts'
-import Post from './Post/Post'
+import Post from './Post'
+import Home from '../services/Home'
 import Remote from '../services/Remote'
 import Local from '../services/Local'
+import Admin from '../services/Admin'
+import Login from '../components/Login'
 
-const App = () => {
+function App() {
+  const navLink = [
+    { id: 1, link: "/", text: "Home" },
+    { id: 2, link: "/remote", text: "Remote" },
+    { id: 3, link: "/local", text: "Local" },
+    { id: 4, link: "/about", text: "About" },
+    { id: 5, link: "/login", text: "Login" },
+    { id: 6, link: "/admin", text: "Admin" }
+  ];
+  const [activeId, setActiveId] = useState();
+
   return(
 	<Router>
 	<div id="colorlib-page">
@@ -19,17 +32,15 @@ const App = () => {
 			<nav id="colorlib-main-menu" role="navigation">
 				<span style={{position: 'absolute', top: '2%'}}>Just a Simple Watch Blog.</span>
 				<ul>
-					<li className="colorlib-active"><Link to="/">Home</Link></li>
-					<li><Link to="/local">Local</Link></li>
-					<li><Link to="/remote">Remote</Link></li>
-					<li><Link to="/">About</Link></li>
-					<li><Link to="/">Login</Link></li>
+					{navLink.map((val) => (
+			          <li onClick={() => setActiveId(val.id)} className={activeId === val.id ? "colorlib-active" : "Inactive"}>
+			           <Link to={val.link}>{val.text}</Link>
+			          </li>
+			        ))}
 				</ul>
-
 			</nav>
 			<div className="colorlib-footer">
 				<img src="https://pbs.twimg.com/profile_images/1324826554485166082/BMGoOinS_400x400.jpg" alt="logo" width="150" height="150" />
-				
 			</div>
 		</aside>
 		<div id="colorlib-main">
@@ -39,17 +50,23 @@ const App = () => {
 						<div className="col-xl-12 py-5 px-md-5">
 							<div className="row pt-md-4">
 								<Switch>
-									<Route path="/local">
+									<Route exact path="/">
+										<Home />
+									</Route>
+									<Route exact path="/local">
 										<Local />
 									</Route>
-									<Route path="/remote">
+									<Route exact path="/remote">
 										<Remote />
 									</Route>
 									<Route path="/posts/:id">
 										<Post />
 									</Route>
-									<Route exact path="/">
-										<Posts />
+									<Route exact path="/login">
+										<Login />
+									</Route>
+									<Route exact path="/admin">
+										<Admin />
 									</Route>
 								</Switch>
 							</div>
