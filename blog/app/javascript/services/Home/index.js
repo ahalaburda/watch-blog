@@ -64,7 +64,7 @@ class Home extends Component {
             articles.map(article => {
               const { id, date, author, url, title, description, image } = article;
               return (
-                  <Entry id={article.id}
+                  <Entry key={article.id}
                         date={article.date}
                         author={article.author}
                         url={article.url}

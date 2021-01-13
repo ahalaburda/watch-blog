@@ -32,10 +32,11 @@ class Local extends Component {
         <div>
           {this.state.articles.map( article  => {
             return (
-              <Entry  id={article.attributes.id}
+              <Entry key={article.attributes.title}
                   date={article.attributes.created_at}
                   author={article.attributes.author}
                   url="#"
+                  tag="local"
                   title={article.attributes.title}
                   description={article.attributes.description}
                   image={article.attributes.image_url}/>

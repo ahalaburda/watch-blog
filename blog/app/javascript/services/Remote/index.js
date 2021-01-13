@@ -64,10 +64,11 @@ class Remote extends Component {
             articles.map(article => {
               const { id, date, author, url, title, description, image } = article;
               return (
-                  <Entry id={article.id}
+                  <Entry key={article.title}
                         date={article.date}
                         author={article.author}
                         url={article.url}
+                        tag="remote"
                         title={article.title}
                         description={article.description}
                         image={article.image}/>
