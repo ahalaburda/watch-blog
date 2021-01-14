@@ -32,8 +32,8 @@ function App() {
 			<nav id="colorlib-main-menu" role="navigation">
 				<span style={{position: 'absolute', top: '2%'}}>Just a Simple Watch Blog.</span>
 				<ul>
-					{navLink.map((val) => (
-			          <li onClick={() => setActiveId(val.id)} className={activeId === val.id ? "colorlib-active" : "Inactive"}>
+					{navLink.map((val, index) => (
+			          <li key={index} onClick={() => setActiveId(val.id)} className={activeId === val.id ? "colorlib-active" : "Inactive"}>
 			           <Link to={val.link}>{val.text}</Link>
 			          </li>
 			        ))}
