@@ -13,10 +13,8 @@ class Local extends Component {
   getNews() {
      axios.get('http://localhost:3000/api/v1/posts.json')
         .then(response => {
-          this.setState({articles: response.data.data});
-          console.log(typeof this.state.articles);
-          console.log(this.state.articles);
-
+          const reversed = response.data.data.reverse();
+          this.setState({articles: reversed});
         })
         .catch(error => console.log(error))
   }
