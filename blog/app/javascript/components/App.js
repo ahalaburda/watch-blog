@@ -6,13 +6,28 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Post from './Post'
 import Home from '../services/Home'
 import Remote from '../services/Remote'
 import Local from '../services/Local'
 import Admin from '../services/Admin'
+import About from '../components/About'
 import Login from '../components/Login'
-
+  /**
+   * Main component wich render the aside, router and the main body
+   *
+   * 
+   * TODO 	*- Admin view just for logged users
+   * 		*- Change route link from login to logout
+   *		*- Sign up view
+   *		*- fix burger menu error
+   *		*- Read More button
+   *		*- TDD
+   *		*- 404 500 error page
+   *
+   * IN PROGRESS
+   *		*- Authentication with jwt devise for login, logout and sign up
+   *		*- Local new View
+   */
 function App() {
   const navLink = [
     { id: 1, link: "/", text: "Home" },
@@ -59,8 +74,8 @@ function App() {
 									<Route exact path="/remote">
 										<Remote />
 									</Route>
-									<Route path="/posts/:id">
-										<Post />
+									<Route exact path="/about">
+										<About />
 									</Route>
 									<Route exact path="/login">
 										<Login />
