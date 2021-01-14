@@ -36,7 +36,7 @@ class Home extends Component {
    */
   getNews(maxPerPage) {
     axios.get(
-          `http://newsapi.org/v2/everything?domains=hodinkee.com&page=1&pageSize={maxPerPage}&apiKey=e6fb7a2615694582bd66f2415bc8ec8f`
+          `http://newsapi.org/v2/everything?domains=hodinkee.com&page=1&pageSize=${maxPerPage}&apiKey=e6fb7a2615694582bd66f2415bc8ec8f`
       )
           .then(response =>
             response.data.articles.map(article => ({
@@ -73,7 +73,7 @@ class Home extends Component {
             articles.map(article => {
               const { id, date, author, url, title, description, image } = article;
               return (
-                  <Entry key={article.id}
+                  <Entry key={article.url}
                         date={article.date}
                         author={article.author}
                         url={article.url}

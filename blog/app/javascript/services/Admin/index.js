@@ -175,16 +175,19 @@ class Admin extends Component {
 								<br />
 								<label htmlFor="description">Content</label>
 								<textarea className="form-control modal-input" name="description" rows="3" onChange={this.handleChange} value={form ? form.description: ''}></textarea>
-								<div className="row">
-									<div className="col-sm">
-										<label htmlFor="created_at">Created</label>
-										<input className="form-control modal-input" type="text" name="created_at" readOnly onChange={this.handleChange} value={form ? form.created_at: ''} />
-									</div>
-									<div className="col-sm">
-										<label htmlFor="updated_at">Updated</label>
-										<input className="form-control modal-input" type="text" name="updated_at" readOnly onChange={this.handleChange} value={form ? form.updated_at: ''} />
-								    </div>
-								  </div>
+									{this.state.modalEdit 
+										?	<div className="row">
+												<div className="col-sm">
+													<label htmlFor="created_at">Created</label>
+													<input className="form-control modal-input" type="text" name="created_at" readOnly onChange={this.handleChange} value={form ? form.created_at: ''} />
+												</div>
+												<div className="col-sm">
+													<label htmlFor="updated_at">Updated</label>
+													<input className="form-control modal-input" type="text" name="updated_at" readOnly onChange={this.handleChange} value={form ? form.updated_at: ''} />
+											    </div>
+											  </div>
+										: ""
+									 }
 							</div>
 						</Modal.Body>
 						<Modal.Footer>
