@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Entry from '../../components/Entry'
 
+/**
+ * Home component get all the news from Hodinkee of NewsAPI and render with a Infinite Scroll method
+ */
+
 class Home extends Component {
   constructor(props) {
     super(props)
@@ -14,6 +18,9 @@ class Home extends Component {
     }
   }
 
+  /**
+   * Get the heigt of the page and check if the scrollbar if at the botton, for set a new pagesize limit and render the news from NewsAPI
+   */
   infiniteScroll = () => {
     if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight){
       let maxPerPage = this.state.page;
@@ -24,7 +31,9 @@ class Home extends Component {
       this.getNews(maxPerPage);
     }
   }
-
+  /**
+   * Get the news from Hodinkee,and update the state value with the response.
+   */
   getNews(maxPerPage) {
     axios.get(
           `http://newsapi.org/v2/everything?domains=hodinkee.com&page=1&pageSize={maxPerPage}&apiKey=e6fb7a2615694582bd66f2415bc8ec8f`

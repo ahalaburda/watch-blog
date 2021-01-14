@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Entry from '../../components/Entry'
 
+/**
+ * Local component get all the record from the local database and list the response from the API.
+ */
+
 class Local extends Component {
   constructor(props) {
     super(props)
@@ -10,6 +14,9 @@ class Local extends Component {
     }
   }
 
+  /**
+   * GET: get the record from the local API and update the state with the response
+   */
   getNews() {
      axios.get('http://localhost:3000/api/v1/posts.json')
         .then(response => {
