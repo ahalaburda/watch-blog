@@ -1,0 +1,9 @@
+#colorlib-main > section > div > div > div > div > div > div > button{
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+.modal-input{
+	border-bottom: 1px solid #17a2b8 !important;
+	width: 100% !important;
+}
