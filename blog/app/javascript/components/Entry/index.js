@@ -19,7 +19,7 @@ function Entry(props) {
 						</p>
 					</div>
 					<p className="mb-4">{props.description}</p>
-					<p><a href={props.url} className="btn btn-custom">Read More <span className="ion-ios-arrow-forward" /></a></p>
+					<p><a href={props.url} className="btn btn-custom">{props.button_message} <span className="ion-ios-arrow-forward" /></a></p>
 				</div>
 			</div>
 		</div> 
