@@ -9,7 +9,7 @@ import {Button,Modal} from 'react-bootstrap'
  * Admin component with a CRUD UI to add local entries in the blog.
  */
 
-const url = "http://localhost:3000/api/v1/posts";
+const url = "api/v1/posts";
 
 class Admin extends Component {
 	constructor(props) {
