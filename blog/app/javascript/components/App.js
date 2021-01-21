@@ -12,6 +12,8 @@ import Local from '../services/Local'
 import Admin from '../services/Admin'
 import About from '../components/About'
 import Login from '../components/Login'
+import Menu from '../components/Menu'
+
   /**
    * Main component wich render the aside, router and the main body
    *
@@ -19,8 +21,6 @@ import Login from '../components/Login'
    * TODO 	*- Admin view just for logged users
    * 		*- Change route link from login to logout
    *		*- Sign up view
-   *		*- fix burger menu error
-   *		*- Read More button
    *		*- TDD
    *		*- 404 500 error page
    *
@@ -29,35 +29,10 @@ import Login from '../components/Login'
    *		*- Local new View
    */
 function App() {
-  const navLink = [
-    { id: 1, link: "/", text: "Home" },
-    { id: 2, link: "/remote", text: "Remote" },
-    { id: 3, link: "/local", text: "Local" },
-    { id: 4, link: "/about", text: "About" },
-    { id: 5, link: "/login", text: "Login" },
-    { id: 6, link: "/admin", text: "Admin" }
-  ];
-  const [activeId, setActiveId] = useState();
-
   return(
 	<Router>
 	<div id="colorlib-page">
-		<a href="#" className="js-colorlib-nav-toggle colorlib-nav-toggle"><i /></a>
-		<aside id="colorlib-aside" role="complementary" className="js-fullheight">
-			<nav id="colorlib-main-menu" role="navigation">
-				<span style={{position: 'absolute', top: '2%'}}>Just a Simple Watch Blog.</span>
-				<ul>
-					{navLink.map((val, index) => (
-			          <li key={index} onClick={() => setActiveId(val.id)} className={activeId === val.id ? "colorlib-active" : "Inactive"}>
-			           <Link to={val.link}>{val.text}</Link>
-			          </li>
-			        ))}
-				</ul>
-			</nav>
-			<div className="colorlib-footer">
-				<img src="https://pbs.twimg.com/profile_images/1324826554485166082/BMGoOinS_400x400.jpg" alt="logo" width="150" height="150" />
-			</div>
-		</aside>
+		<Menu />
 		<div id="colorlib-main">
 			<section className="ftco-section ftco-no-pt ftco-no-pb">
 				<div className="container">
