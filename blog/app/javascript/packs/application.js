@@ -14,13 +14,3 @@ ActiveStorage.start()
 
 
 import "../template/css/app.scss"
-
-require('../template/js/aos.js')
-require('../template/js/jquery.easing.1.3.js')
-require('../template/js/jquery.waypoints.min.js')
-require('../template/js/jquery.stellar.min.js')
-require('../template/js/owl.carousel.min.js')
-require('../template/js/jquery.magnific-popup.min.js')
-require('../template/js/aos.js')
-require('../template/js/jquery.animateNumber.min.js')
-require('../template/js/scrollax.min.js')
