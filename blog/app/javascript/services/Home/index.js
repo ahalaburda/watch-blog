@@ -80,7 +80,8 @@ class Home extends Component {
                         tag = "Hodinkee"
                         title={article.title}
                         description={article.description}
-                        image={article.image}/>
+                        image={article.image}
+                        button_message="Go to the news" />
              );
             })
           ) : (

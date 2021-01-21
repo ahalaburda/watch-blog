@@ -79,7 +79,8 @@ class Remote extends Component {
                         tag="remote"
                         title={article.title}
                         description={article.description}
-                        image={article.image}/>
+                        image={article.image}
+                        button_message="Go to the news" />
              );
             })
           ) : (

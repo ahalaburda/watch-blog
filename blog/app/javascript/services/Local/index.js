@@ -44,7 +44,8 @@ class Local extends Component {
                   tag="local"
                   title={article.attributes.title}
                   description={article.attributes.description}
-                  image={article.attributes.image_url}/>
+                  image={article.attributes.image_url}
+                  button_message="Read More"/>
             )}
           )}
         </div>
