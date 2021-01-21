@@ -1,11 +1,11 @@
 .btn-custom{
-	background-color: #f7e23c;
+	background-color: #f3df4d;
     color: #000;
 }
 .btn-custom:hover{
 	background-color: #ffffff;
     color: #000;
-    border: 1px solid #f7e23c;
+    border: 1px solid #f3df4d;
 	transition-delay: 0.1s;
 
 }
