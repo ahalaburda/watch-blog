@@ -25,7 +25,8 @@
     "react-dom": "^17.0.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "use-dark-mode": "^2.3.1"
   },
   "version": "0.1.0",
   "devDependencies": {
