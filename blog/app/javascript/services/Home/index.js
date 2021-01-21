@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Entry from '../../components/Entry'
+import Loader from 'images/loader.svg'
 
 /**
  * Home component get all the news from Hodinkee of NewsAPI and render with a Infinite Scroll method
@@ -85,7 +86,7 @@ class Home extends Component {
              );
             })
           ) : (
-            <p>Loading...</p>
+            <img src={Loader} alt="loader" />
           )}
         </div>
       </React.Fragment>

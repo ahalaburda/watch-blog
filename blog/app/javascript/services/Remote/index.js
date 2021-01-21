@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Entry from '../../components/Entry'
+import Loader from 'images/loader.svg'
 
 /**
  * Remote component get all the news of NewsAPI about "watches" and render with a Infinite Scroll method
@@ -84,7 +85,7 @@ class Remote extends Component {
              );
             })
           ) : (
-            <p>Loading...</p>
+            <img src={Loader} alt="loader" />
           )}
         </div>
       </React.Fragment>
