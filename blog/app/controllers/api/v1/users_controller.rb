@@ -1,7 +1,6 @@
-module Api
+  module Api
   module V1
     class UsersController < ApplicationController
-      protect_from_forgery with: :null_session
       before_action :authorized, only: [:auto_login]
 
       # SIGN UP
@@ -11,7 +10,7 @@ module Api
           token = encode_token({user_id: @user.id})
           render json: {user: @user, token: token}
         else
-          render json: {error: "Invalid username or password"}
+          render json: {error: "Invalid username or password", status: 422}, status: :unprocessable_entity
         end
       end
 
@@ -23,7 +22,7 @@ module Api
           token = encode_token({user_id: @user.id})
           render json: {user: @user, token: token}
         else
-          render json: {error: "Invalid username or password"}
+          render json: {error: "Invalid username or password",status: 422}, status: :unprocessable_entity
         end
       end
 
