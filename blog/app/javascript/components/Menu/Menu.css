@@ -90,14 +90,3 @@ Note: Beware of modifying this element as it can break the animations - you shou
 #colorlib-aside #colorlib-main-menu ul li a:after {
     background-color: #f3df4d !important;
 }
-
-body.dark-mode{
-  .bm-burger-bars {
-    background: #fff;
-    opacity: 0 !important;
-  }
-  .bm-burger-bars-hover {
-    background: #fff;
-    opacity: 0 !important;
-  }
-}
